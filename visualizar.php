@@ -1,3 +1,9 @@
+<?php
+require_once "src/funcoes-crud.php";
+
+$alunos = inserirAluno($conexao, $nome, $primeira_nota, $segunda_nota);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,11 +18,18 @@
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
-   <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
-para exibir a relação de alunos existentes no banco de dados.
-
-Obs.: não se esqueça de criar também os links dinâmicos para
-as páginas de atualização e exclusão. -->
+   <table border="1">
+    <tr>
+        <th> Nome </th>
+        <th> Primeira Nota </th>
+        <th> Segunda Nota </th>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+   </table>
 
 
     <p><a href="index.php">Voltar ao início</a></p>
