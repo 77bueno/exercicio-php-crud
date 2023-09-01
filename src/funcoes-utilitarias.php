@@ -10,7 +10,7 @@ function resultadoMedia(float $primeira_nota, float $segunda_nota):string{
 // Situação de Aluno
 
 function resultadoSituacao(float $media):void {
-    if ($media > 7) {
+    if ($media >= 7) {
         echo "Aprovado";
     } elseif($media < 5) {
         echo "Reprovado";

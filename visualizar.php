@@ -4,7 +4,6 @@ require_once "src/funcoes-utilitarias.php";
 
 $alunos = lerAlunos($conexao);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,7 +37,8 @@ $alunos = lerAlunos($conexao);
         <td><?=$aluno['segunda_nota']?></td>
         <td><?=resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota'])?></td>
         <td><?=resultadoSituacao(resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota']))?></td>
-        <td><a href="">Editar | <a href="">Excluir</a></a></td>
+        <td><a href="atualizar.php?id=<?=$aluno['id']?>">Editar |
+            <a href="excluir.php?id=<?=$aluno['id']?>" class="excluir">Excluir</a></a></td>
     <tr>
     <?php } ?>
    </table>
@@ -47,5 +47,6 @@ $alunos = lerAlunos($conexao);
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
 
+<script src="js/confirmar-exclusao.js"></script>
 </body>
 </html>
