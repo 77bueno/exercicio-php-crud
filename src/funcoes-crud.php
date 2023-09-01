@@ -20,6 +20,7 @@ function inserirAluno(
         $consulta->bindValue(":nome", $nome, PDO::PARAM_STR);
         $consulta->bindValue(":primeira_nota", $primeira_nota, PDO::PARAM_STR);
         $consulta->bindValue(":segunda_nota", $segunda_nota, PDO::PARAM_STR);
+        $consulta->execute();
     } catch (Exception $erro) {
         die("Erro ao inserir: ".$erro->getMessage());
     }
@@ -28,8 +29,7 @@ function inserirAluno(
 // 2- READ / SELECT
 
 function lerAlunos(PDO $conexao):array {
-    $sql = "SELECT nome, primeira_nota, segunda_nota
-    FROM alunos ORDER BY nome"; 
+    $sql = "SELECT * FROM alunos ORDER BY nome"; 
 
     try {
         $consulta = $conexao->prepare($sql);

@@ -1,7 +1,9 @@
 <?php
 require_once "src/funcoes-crud.php";
+require_once "src/funcoes-utilitarias.php";
 
-$alunos = inserirAluno($conexao, $nome, $primeira_nota, $segunda_nota);
+$alunos = lerAlunos($conexao);
+
 
 ?>
 <!DOCTYPE html>
@@ -23,12 +25,22 @@ $alunos = inserirAluno($conexao, $nome, $primeira_nota, $segunda_nota);
         <th> Nome </th>
         <th> Primeira Nota </th>
         <th> Segunda Nota </th>
+        <th> Média </th>
+        <th> Situação </th>
+        <th> Operações </th>
     </tr>
+
+    
+    <?php foreach ($alunos as $aluno) { ?>
     <tr>
-        <td>3</td>
-        <td>2</td>
-        <td>1</td>
-    </tr>
+        <td><?=$aluno['nome']?></td>
+        <td><?=$aluno['primeira_nota']?></td>
+        <td><?=$aluno['segunda_nota']?></td>
+        <td><?=resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota'])?></td>
+        <td><?=resultadoSituacao(resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota']))?></td>
+        <td><a href="">Editar | <a href="">Excluir</a></a></td>
+    <tr>
+    <?php } ?>
    </table>
 
 

@@ -1,9 +1,8 @@
 <?php
 require_once "src/funcoes-crud.php";
 
-$alunos = inserirAluno($conexao, $nome, $primeira_nota, $segunda_nota);
-
 if(isset($_POST['inserir'])){
+	
     $nome = filter_input(
         INPUT_POST, "nome",
         FILTER_SANITIZE_SPECIAL_CHARS
@@ -11,15 +10,19 @@ if(isset($_POST['inserir'])){
 
 	$primeira_nota = filter_input(
 		INPUT_POST, "primeira_nota",
-		FILTER_SANITIZE_NUMBER_FLOAT
+		FILTER_SANITIZE_NUMBER_FLOAT,
+		FILTER_FLAG_ALLOW_FRACTION
 	);
 
 	$segunda_nota = filter_input(
 		INPUT_POST, "segunda_nota",
-		FILTER_SANITIZE_NUMBER_FLOAT
+		FILTER_SANITIZE_NUMBER_FLOAT,
+		FILTER_FLAG_ALLOW_FRACTION
 	);
 
-  header("location:visualizar.php");
+	inserirAluno($conexao, $nome, $primeira_nota, $segunda_nota);
+
+    header("location:visualizar.php");
 }
 ?>
 <!DOCTYPE html>
@@ -39,13 +42,13 @@ if(isset($_POST['inserir'])){
 
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <input type="text" id="nome" name="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira_nota" step="0.01" min="0.00" max="10.00" required></p>
+	    <input type="number" id="primeira" name="primeira_nota" step="0.01" min="0.00" max="10.00" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda_nota" step="0.01" min="0.00" max="10.00" required></p>
+	    <input type="number" id="segunda" name="segunda_nota" step="0.01" min="0.00" max="10.00" required></p>
 	    
       <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
