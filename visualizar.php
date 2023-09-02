@@ -31,7 +31,6 @@ $alunos = lerAlunos($conexao);
         <th> Situação </th>
         <th> Operações </th>
     </tr>
-
     
     <?php foreach ($alunos as $aluno) { ?>
     <tr>
@@ -45,7 +44,6 @@ $alunos = lerAlunos($conexao);
     <tr>
     <?php } ?>
    </table>
-
 
     <p><a href="index.php">Voltar ao início</a></p>
     </div>

@@ -4,7 +4,6 @@ body {
     
 }
 
-
 a { 
     color: blue;
     font-weight: bold;
@@ -15,3 +14,4 @@ a {
 h2 a { font-size: 0.9rem;}
 
 a:hover, a:focus { text-decoration: underline;}
+
