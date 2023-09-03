@@ -1,7 +1,7 @@
 html { font-size: 16px;}
 body {
     font-family: "Segoe UI", Arial, sans-serif; 
-    
+    background-color: #d4cccc;
 }
 
 a { 
@@ -15,3 +15,17 @@ h2 a { font-size: 0.9rem;}
 
 a:hover, a:focus { text-decoration: underline;}
 
+.aprovado {
+    color: green; 
+    font-weight: bold;
+}
+
+.reprovado {
+    color: red;
+    font-weight: bold;
+}
+
+.recuperacao {
+    color: yellow;
+    font-weight: bold;
+}

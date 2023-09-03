@@ -11,8 +11,9 @@ $alunos = lerAlunos($conexao);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
@@ -38,7 +39,7 @@ $alunos = lerAlunos($conexao);
         <td><?=$aluno['primeira_nota']?></td>
         <td><?=$aluno['segunda_nota']?></td>
         <td><?=resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota'])?></td>
-        <td><?=resultadoSituacao(resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota']))?></td>
+        <td class="situacao"><?=resultadoSituacao(resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota']))?></td>
         <td><a href="atualizar.php?id=<?=$aluno['id']?>">Editar |
             <a href="excluir.php?id=<?=$aluno['id']?>" class="excluir">Excluir</a></a></td>
     <tr>
@@ -51,5 +52,7 @@ $alunos = lerAlunos($conexao);
 
 <script src="js/confirmar-exclusao.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="js/cor-na-tag.js"></script>
+
 </body>
 </html>

@@ -35,6 +35,7 @@ if (isset($_POST['atualizar'])) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -42,7 +43,7 @@ if (isset($_POST['atualizar'])) {
     <h1>Atualizar dados do aluno </h1>
     <hr>
     		
-    <p>Utilize o formulário abaixo para atualizar os dados do aluno.</p>
+    <p>Utilize o formulário abaixo para atualizar os dados do aluno.</p> 
 
     <form action="#" method="post">
         
@@ -55,28 +56,31 @@ if (isset($_POST['atualizar'])) {
 	    <p><label for="segunda">Segunda nota:</label>
 	    <input value="<?=$aluno['segunda_nota']?>" type="number" id="segunda" name="segunda_nota" step="0.01" min="0.00" max="10.00" required></p>
 
+            
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
-            <label for="media">Média:</label>
-            <input value="<?=$aluno['media']?>" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" readonly disabled>
+            <label for="media" class="form-label">Média:</label>
+            <input value="<?=$aluno['media']?>" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" class="form-control" readonly disabled>
         </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
-            <label for="situacao">Situação:</label>
+            <label for="situacao" >Situação:</label>
 	        <input value="<?=resultadoSituacao($aluno['media'])?>" type="text" name="situacao" id="situacao" readonly disabled>
         </p>
-	    
-        <button type="submit" name="atualizar">Atualizar dados do aluno</button>
-	</form>    
-    
+
+        <button type="submit" name="atualizar" class="btn btn-primary">Atualizar dados do aluno</button>
+
+        
+    </form>
+
     <hr>
     <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
 
 </div>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="js/cor-na-tag.js"></script>
 </body>
 </html>
