@@ -26,8 +26,6 @@ function calculaMedia(nota1, nota2) {
  return media.toFixed(2);
 }
 
-
-
 function verificaSituacao() {
   const media = parseFloat(inputMedia.value);
 
