@@ -7,7 +7,6 @@ body {
 a { 
     color: black;
     font-weight: bold;
-    
     font-size: 1rem;
 }
 
@@ -25,7 +24,7 @@ h2 a { font-size: 0.9rem;}
 }
 
 .recuperacao {
-    color: rgb(201, 201, 20);
+    color: rgb(180, 180, 7);
     font-weight: bold;
 }
 
@@ -51,8 +50,6 @@ form {
     position: relative;
     top: 15vh;
 }
-
-.form-control {  }
 
 .borda-link{
     border-right: black 2px solid; 
