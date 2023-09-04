@@ -7,7 +7,7 @@
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container telameio">
     <h1>Exercício - CRUD com PHP e MySQL</h1>
     <hr>
     <h2>Gerenciamento de alunos, notas, médias e aprovação/reprovação</h2>

@@ -39,7 +39,7 @@ if (isset($_POST['atualizar'])) {
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container meiotela">
     <h1>Atualizar dados do aluno </h1>
     <hr>
     		
@@ -47,16 +47,15 @@ if (isset($_POST['atualizar'])) {
 
     <form action="#" method="post">
         
-	    <p><label for="nome">Nome:</label>
-	    <input value="<?=$aluno['nome']?>" type="text" name="nome" id="nome" required></p>
+	    <p><label class="form-label" for="nome">Nome:</label>
+	    <input class="form-control" value="<?=$aluno['nome']?>" type="text" name="nome" id="nome" required></p>
         
-        <p><label for="primeira">Primeira nota:</label>
-	    <input value="<?=$aluno['primeira_nota']?>" type="number" id="primeira" name="primeira_nota" step="0.01" min="0.00" max="10.00" required></p>
+        <p><label class="form-label" for="primeira">Primeira nota:</label>
+	    <input class="form-control" value="<?=$aluno['primeira_nota']?>" type="number" id="primeira" name="primeira_nota" step="0.01" min="0.00" max="10.00" required></p>
 	    
-	    <p><label for="segunda">Segunda nota:</label>
-	    <input value="<?=$aluno['segunda_nota']?>" type="number" id="segunda" name="segunda_nota" step="0.01" min="0.00" max="10.00" required></p>
-
-            
+	    <p><label class="form-label" for="segunda">Segunda nota:</label>
+	    <input class="form-control" value="<?=$aluno['segunda_nota']?>" type="number" id="segunda" name="segunda_nota" step="0.01" min="0.00" max="10.00" required></p>
+   
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
@@ -68,12 +67,10 @@ if (isset($_POST['atualizar'])) {
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao" >Situação:</label>
-	        <input value="<?=resultadoSituacao($aluno['media'])?>" type="text" name="situacao" id="situacao" readonly disabled>
+	        <input class="form-control" value="<?=resultadoSituacao($aluno['media'])?>" type="text" name="situacao" id="situacao" readonly disabled>
         </p>
 
         <button type="submit" name="atualizar" class="btn btn-primary">Atualizar dados do aluno</button>
-
-        
     </form>
 
     <hr>

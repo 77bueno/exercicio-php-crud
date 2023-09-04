@@ -1,19 +1,18 @@
 html { font-size: 16px;}
 body {
     font-family: "Segoe UI", Arial, sans-serif; 
-    background-color: #d4cccc;
+    background-color: #a4a3ee;
 }
 
 a { 
-    color: blue;
+    color: black;
     font-weight: bold;
-    text-decoration: none;
+    
     font-size: 1rem;
 }
 
 h2 a { font-size: 0.9rem;}
 
-a:hover, a:focus { text-decoration: underline;}
 
 .aprovado {
     color: green; 
@@ -26,6 +25,36 @@ a:hover, a:focus { text-decoration: underline;}
 }
 
 .recuperacao {
-    color: yellow;
+    color: rgb(201, 201, 20);
     font-weight: bold;
+}
+
+form {
+    background-color: white;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    width: 50%;
+}
+
+.meiotela {
+    position: relative;
+    top: 12vh;
+}
+
+.telameio {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 15vh;
+}
+
+.form-control {  }
+
+.borda-link{
+    border-right: black 2px solid; 
+    padding-right: 4px;
 }

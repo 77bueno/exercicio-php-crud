@@ -16,7 +16,7 @@ $alunos = lerAlunos($conexao);
 
 </head>
 <body>
-<div class="container">
+<div class="container meiotela">
     <div class="m-5">
     
     <h1>Lista de alunos</h1>
@@ -40,8 +40,10 @@ $alunos = lerAlunos($conexao);
         <td><?=$aluno['segunda_nota']?></td>
         <td><?=resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota'])?></td>
         <td class="situacao"><?=resultadoSituacao(resultadoMedia($aluno['primeira_nota'], $aluno['segunda_nota']))?></td>
-        <td><a href="atualizar.php?id=<?=$aluno['id']?>">Editar |
-            <a href="excluir.php?id=<?=$aluno['id']?>" class="excluir">Excluir</a></a></td>
+        <td>
+            <a class="borda-link" href="atualizar.php?id=<?=$aluno['id']?>"><img src="lapis.png" alt=""></a>
+            <a href="excluir.php?id=<?=$aluno['id']?>" class="excluir"><img src="fechar.png" alt=""></a>
+        </td>
     <tr>
     <?php } ?>
    </table>
